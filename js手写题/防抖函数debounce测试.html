@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input id="inputField">id</input>
+
+  <script>
+    // fn 需要进行包装的函数
+    // delay 单位时间内
+    function debounce(fn, delay) {
+      // 1. 在外部定义一个存储定时器 timerId
+      let timerId = null;
+
+      // 2. 返回一个防抖函数
+      return function(...args) {
+        // 3. 需要清楚上一个定时器
+        if (timerId) {
+          clearTimeout(timerId);
+        }
+
+        timerId = setTimeout(() => {
+          fn.apply(this, args);
+        }, delay);
+      };
+    }
+
+    // 示例函数：每次用户输入时打印输入内容
+    function logInput(value) {
+      console.log('User input:', value);
+    }
+
+    // 创建防抖函数，延迟 500 毫秒执行 logInput
+    const debouncedLogInput = debounce(logInput, 500);
+
+    // 模拟用户输入
+    document
+      .getElementById('inputField')
+      .addEventListener('input', function(event) {
+        debouncedLogInput(event.target.value); // 传递输入框的值
+      });
+  </script>
+</body>
+
+</html>
