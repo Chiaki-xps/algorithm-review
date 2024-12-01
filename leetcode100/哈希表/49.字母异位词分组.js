@@ -12,7 +12,7 @@
 
     strs.forEach((item, index) => {
       // 2. 对字符串先拆分数组，然后排序，再拼接
-      const value = item.split('').sort().join('');
+      const value = item.split("").sort().join("");
 
       // 3. 不存在，初始化
       if (!map[value]) {
@@ -31,3 +31,24 @@
     return result.sort((a, b) => a.length - b.length);
   };
 }
+
+/**
+ * 思路：官方的思路
+ * 1. 思路差不多，
+ */
+var groupAnagrams = function (strs) {
+  const map = new Map();
+  for (let str of strs) {
+    // 目的是为了 字符串 -> 数组 -> 排序 -> 字符串
+    let array = Array.from(str);
+    array.sort();
+    let key = array.toString();
+
+    // 根据key建立映射。
+    let list = map.get(key) ? map.get(key) : new Array();
+    list.push(str);
+    map.set(key, list);
+  }
+  // map 转 数组
+  return Array.from(map.values());
+};
