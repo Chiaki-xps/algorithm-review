@@ -17,22 +17,29 @@
 
 /**
  * 思路：哈希表
- * 1. 创建一个哈希表new Map()
- * 2. 进行一次遍历，先把值存进去 map[num] = num 对应的 index
+ * 1. 创建一个哈希表,可以用对象
+ * 2. 对象值为key，索引为数组的值
+ * 3. 进行一次遍历，不管有没有找到，都会把数据存入道哈希表，方便下一次查找
  * 3. 根据相差的diff，如果在map中能找到，说明之前遍历进去了，作为 prevIndex
  * 4. 通过hash表，直接取值的方式，减少一次循环
  */
 {
   var twoSum = function (nums, target) {
-    let map = new Map();
+    // 1. 创建hash表
+    let map = {};
+
     for (let i = 0; i < nums.length; i++) {
       prevIndex = map[target - nums[i]];
-      // 注意如果值是0的情况
+
+      // 如果不存在的话，说明没有找到
       if (prevIndex !== undefined) {
         return [prevIndex, i];
       }
-      map[num] = i;
+
+      // 把值存进去
+      map[nums[i]] = i;
     }
+
     return [-1, -1];
   };
 }
