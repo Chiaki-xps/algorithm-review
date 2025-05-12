@@ -11,12 +11,13 @@
 
 - [x] 手写深拷贝
 - [x] 手写事件总线
-- [x] 手写防抖 debounce
+- [x] 手写防抖 debounce （货拉拉）
 - [x] 手写节流 throttle
 - [x] 手写 call
 - [x] 手写 apply
 - [x] 手写 bind
 - [x] js 任意两个小数相加
+- [x] 手写 instanceof
 
 ## leetcode 100
 
