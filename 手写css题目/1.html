@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      body > div {
+        width: 100px;
+        height: 100px;
+        background: rgb(182, 184, 182);
+      }
+
+      .test1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .test2 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .test3 {
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: transparent transparent orangered transparent;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>题目1、将方块内的文字 水平+垂直居中</h2>
+    <div class="test1">文字居中</div>
+
+    <h2>题目2、将方块在整个页面中 水平+垂直居中</h2>
+    <div class="test2"></div>
+
+    <h2>题目3、将方块实现成一个三角形</h2>
+    <div class="test3"></div>
+  </body>
+</html>
