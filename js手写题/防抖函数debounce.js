@@ -16,7 +16,7 @@ function debounce(fn, delay) {
 
   // 2. 返回一个防抖函数
   return function (...args) {
-    // 3. 需要清楚上一个定时器
+    // 3. 需要清除上一个定时器
     if (timerId) {
       clearTimeout(timerId);
     }
