@@ -36,6 +36,7 @@ console.log(toFixed(2.345, 2)); // 输出：'2.35'
 
     let [a, b] = str.split(".");
 
+    // 字符串不可变性：JavaScript中字符串是只读的，b[digits-1] = ... 这种赋值操作无效
     b = Array.from(b);
 
     if (b[digits] >= 5) {
